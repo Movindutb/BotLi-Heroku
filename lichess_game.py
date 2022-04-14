@@ -39,7 +39,7 @@ class Lichess_Game:
         self.out_of_cloud_counter = 0
         self.out_of_chessdb_counter = 0
         self.loaded_pybooks: dict[str, dict[int, str]] = {}
-        self.engine = self._get_engine()
+        self.engine = self._get_engine(gameFull_event)
         self.scores: list[chess.engine.PovScore] = []
         self.last_message = 'No eval available yet.'
 
@@ -355,8 +355,11 @@ class Lichess_Game:
         else:
             return str(score.pov(self.board.turn))
 
-    def _get_engine(self) -> chess.engine.SimpleEngine:
-        engine = chess.engine.SimpleEngine.popen_uci(self.config['engine']['path'])
+    def _get_engine(self, gameFull_event: dict) -> chess.engine.SimpleEngine:
+        if gameFull_event['variant']['name'] == 'Standard' or gameFull_event['variant']['name'] == 'From Position' :
+            engine = chess.engine.SimpleEngine.popen_uci(self.config['engine']['path'])
+        else:
+            engine = chess.engine.SimpleEngine.popen_uci(self.config['engine']['varipath'])      
         options = self.config['engine']['uci_options']
 
         def not_managed(key: str): return not chess.engine.Option(key, '', None, None, None, None).is_managed()

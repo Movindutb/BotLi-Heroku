@@ -40,6 +40,7 @@ def load_config() -> dict:
             raise Exception(f'Your engine directory "{CONFIG["engine"]["dir"]}" is not a directory.')
 
         CONFIG['engine']['path'] = os.path.join(CONFIG['engine']['dir'], CONFIG['engine']['name'])
+        CONFIG['engine']['varipath'] = os.path.join(CONFIG['engine']['dir'], CONFIG['engine']['variant'])
 
         if not os.path.isfile(CONFIG['engine']['path']):
             raise Exception(f'The engine "{CONFIG["engine"]["path"]}" file does not exist.')
