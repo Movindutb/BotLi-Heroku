@@ -6,14 +6,14 @@ engine:                                   # Engine settings.
   ponder: true                            # Think on opponent's time.
   variant: "multivariant_stockfish"       # Binary name of the engine to use.
   opening_books:
-    enabled: false                        # Activate opening books.
+    enabled: true                        # Activate opening books.
     books:
-#     white:                              # List of names of books to use as white.
-#       - "WhiteBook"
-#     black:                              # List of names of books to use as black.
-#       - "BlackBook"
-      standard:                           # List of names of books to use if there is no specific book for white, black or chess960.
-        - "DefaultBook" 
+      white:                              # List of names of books to use as white.
+        - "Goi5.1"
+      black:                              # List of names of books to use as black.
+        - "Cerebellum3Merge"
+#      standard:                           # List of names of books to use if there is no specific book for white, black or chess960.
+#        - "DefaultBook" 
 #     chess960:                           # List of names of books to use for Chess960.
 #       - "Chess960Book"
     selection: "best_move"          # Move selection is one of "weighted_random", "uniform_random" or "best_move".
@@ -29,7 +29,7 @@ engine:                                   # Engine settings.
       min_time: 40                        # Time the bot must have at least to use the online move.
       timeout: 5                          # Time the server has to respond.
     online_egtb:
-      enabled: false                      # Activate online endgame tablebases from Lichess.
+      enabled: true                      # Activate online endgame tablebases from Lichess.
       min_time: 10                        # Time the bot must have at least to use the online move.
       timeout: 3                          # Time the server has to respond.
   offer_draw:
@@ -92,4 +92,5 @@ matchmaking:
 # max_rating_diff: 300                    # Maximum rating distance to opponent. (Commenting allowed)
 
 books:                                    # Names of the opening books (to be used above in the polyglot section) and paths to the polyglot opening books.
-  DefaultBook: "/path/to/DefaultBook.bin"
+  Goi5.1: "engines/Goi5.1.bin"
+  Cerebellum3Merge: "Cerebellum3Merge.bin"
