@@ -19,17 +19,17 @@ engine:                                   # Engine settings.
     selection: "best_move"          # Move selection is one of "weighted_random", "uniform_random" or "best_move".
   online_moves:
     chessdb:
-      enabled: false                      # Activate online moves from https://chessdb.cn/queryc_en/
+      enabled: true                      # Activate online moves from https://chessdb.cn/queryc_en/
       min_depth: 10                       # Minimum evaluation depth.
       min_time: 40                        # Time the bot must have at least to use the online move.
       timeout: 5                          # Time the server has to respond.
     lichess_cloud:
-      enabled: false                      # Activate online moves from Lichess cloud eval.
+      enabled: true                      # Activate online moves from Lichess cloud eval.
       min_depth: 10                       # Minimum evaluation depth.
       min_time: 40                        # Time the bot must have at least to use the online move.
       timeout: 5                          # Time the server has to respond.
     online_egtb:
-      enabled: false                      # Activate online endgame tablebases from Lichess.
+      enabled: true                      # Activate online endgame tablebases from Lichess.
       min_time: 10                        # Time the bot must have at least to use the online move.
       timeout: 3                          # Time the server has to respond.
   offer_draw:
@@ -48,8 +48,7 @@ engine:                                   # Engine settings.
     MultiPV: 1
     Skill Level: 20
     UCI_Elo : 2850
-    Slow Mover: 10
-    Ponder: true
+    Slow Mover: 20
  
 move_overhead_multiplier: 5.1             # Increase if your bot flags games too often. Default move overhead is 1 second per 1 minute initital time.
     
