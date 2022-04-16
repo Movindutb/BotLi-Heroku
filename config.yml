@@ -9,10 +9,11 @@ engine:                                   # Engine settings.
     enabled: true                        # Activate opening books.
     books:
       white:                              # List of names of books to use as white.
-        - "Goi5.1"
+        - "cilentbook"
       black:                              # List of names of books to use as black.
         - "Cerebellum3Merge"
-#      standard:                           # List of names of books to use if there is no specific book for white, black or chess960.
+      standard:                           # List of names of books to use if there is no specific book for white, black or chess960.
+        - "Cerebellum3Merge"#      standard:                           # List of names of books to use if there is no specific book for white, black or chess960.
 #        - "DefaultBook" 
 #     chess960:                           # List of names of books to use for Chess960.
 #       - "Chess960Book"
@@ -29,7 +30,7 @@ engine:                                   # Engine settings.
       min_time: 40                        # Time the bot must have at least to use the online move.
       timeout: 5                          # Time the server has to respond.
     online_egtb:
-      enabled: true                      # Activate online endgame tablebases from Lichess.
+      enabled: false                      # Activate online endgame tablebases from Lichess.
       min_time: 10                        # Time the bot must have at least to use the online move.
       timeout: 3                          # Time the server has to respond.
   offer_draw:
@@ -42,15 +43,13 @@ engine:                                   # Engine settings.
     score: -1000                          # If the score is less than or equal to this value, the bot resigns (in cp).
     consecutive_moves: 5                  # How many moves in a row the score has to be below the resign value.
   uci_options:                            # Arbitrary UCI options passed to the engine. (Commenting allowed)
-    Move Overhead: 400                    # Increase if your bot flags games too often.
-    Threads: 4                            # Max CPU threads the engine can use.
-    Hash: 134                             # Max memory (in megabytes) the engine can allocate.
-    Skill Level: 20
-    UCI_Elo : 2850
-    MultiPV: 1
-    Slow Mover: 67
+    Move Overhead: 290                    # Increase if your bot flags games too often.
+    Threads: 2                            # Max CPU threads the engine can use.
+    Hash: 256                             # Max memory (in megabytes) the engine can allocate.
+    MultiPV: 71
+    Slow Mover: 140
  
-move_overhead_multiplier: 7             # Increase if your bot flags games too often. Default move overhead is 1 second per 1 minute initital time.
+move_overhead_multiplier: 1.3             # Increase if your bot flags games too often. Default move overhead is 1 second per 1 minute initital time.
     
 challenge:                                # Incoming challenges. (Commenting allowed)
   concurrency: 1                          # Number of games to play simultaneously.
@@ -93,4 +92,5 @@ matchmaking:
 
 books:                                    # Names of the opening books (to be used above in the polyglot section) and paths to the polyglot opening books.
   Goi5.1: "engines/Goi5.1.bin"
-  Cerebellum3Merge: "Cerebellum3Merge.bin"
+  Cerebellum3Merge: "./Cerebellum3Merge.bin"
+  cilentbook: "./engines/cilentbook.bin"
