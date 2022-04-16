@@ -1,10 +1,10 @@
 token: "XXXXXXXXXXXXXXXXXXXXXXXX"         # Lichess OAuth2 Token.
 
 engine:                                   # Engine settings.
-  dir: "./engines"                        # Directory containing the engine.
-  name: "stockfish"                       # Binary name of the engine to use.
+  dir: "./"                        # Directory containing the engine.
+  name: "chess-engine"                       # Binary name of the engine to use.
   ponder: true                            # Think on opponent's time.
-  variant: "multivariant_stockfish"       # Binary name of the engine to use.
+  variant: "fairy-seen"       # Binary name of the engine to use.
   opening_books:
     enabled: true                        # Activate opening books.
     books:
@@ -91,6 +91,6 @@ matchmaking:
 # max_rating_diff: 300                    # Maximum rating distance to opponent. (Commenting allowed)
 
 books:                                    # Names of the opening books (to be used above in the polyglot section) and paths to the polyglot opening books.
-  Goi5.1: "engines/Goi5.1.bin"
+#  Goi5.1: "engines/Goi5.1.bin"
   Cerebellum3Merge: "./Cerebellum3Merge.bin"
   cilentbook: "./engines/cilentbook.bin"
