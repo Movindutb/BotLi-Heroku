@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - main
+      - patch-1
 
 jobs:
   build:
@@ -17,4 +17,3 @@ jobs:
           heroku_email: "codinglittleshogi@gmail.com" # Insert your Heroku email here.
           usedocker: true
           docker_heroku_process_type: "worker"
-          
