@@ -18,7 +18,7 @@ engine:                                   # Engine settings.
     selection: "weighted_random"          # Move selection is one of "weighted_random", "uniform_random" or "best_move".
   online_moves:
     chessdb:
-      enabled: true                      # Activate online moves from https://chessdb.cn/queryc_en/
+      enabled: false                      # Activate online moves from https://chessdb.cn/queryc_en/
       min_depth: 10                       # Minimum evaluation depth.
       min_time: 40                        # Time the bot must have at least to use the online move.
       timeout: 5                          # Time the server has to respond.
@@ -28,7 +28,7 @@ engine:                                   # Engine settings.
       min_time: 40                        # Time the bot must have at least to use the online move.
       timeout: 5                          # Time the server has to respond.
     online_egtb:
-      enabled: true                      # Activate online endgame tablebases from Lichess.
+      enabled: false                      # Activate online endgame tablebases from Lichess.
       min_time: 10                        # Time the bot must have at least to use the online move.
       timeout: 3                          # Time the server has to respond.
   offer_draw:
@@ -54,7 +54,7 @@ challenge:                                # Incoming challenges. (Commenting all
   bullet_with_increment_only: false       # Whether bullet games should be accepted with increment only.
 # min_increment: 0                        # Minimum amount of increment to accept a challenge.
 # max_increment: 180                      # Maximum amount of increment to accept a challenge.
-  min_initial: 1                          # Minimum amount of initial time to accept a challenge.
+# min_initial: 1                          # Minimum amount of initial time to accept a challenge.
 # max_initial: 315360000                  # Maximum amount of initial time to accept a challenge.
   variants:                               # Chess variants to accept (https://lichess.org/variant).
     - standard
