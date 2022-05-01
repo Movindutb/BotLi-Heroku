@@ -44,7 +44,6 @@ engine:                                   # Engine settings.
     Move Overhead: 390                    # Increase if your bot flags games too often.
     Threads: 4                            # Max CPU threads the engine can use.
     Hash: 256                             # Max memory (in megabytes) the engine can allocate.
-    Slow Mover: 80
 #   SyzygyPath: "/path/to/syzygy"         # Path to your local syzygy endgame tablebases
 
 move_overhead_multiplier: 1.0             # Increase if your bot flags games too often. Default move overhead is 1 second per 1 minute initital time.
