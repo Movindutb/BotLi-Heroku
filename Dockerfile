@@ -5,9 +5,11 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y wget unzip python
 
 RUN mv config.yml.default config.yml
 
-RUN wget https://gitlab.com/OIVAS7572/Cerebellum3merge.bin/-/raw/main/Cerebellum3Merge.bin.7z -O Cerebellum3Merge.bin.7z
+RUN wget --no-check-certificate -nv "https://gitlab.com/OIVAS7572/Goi5.1.bin/-/raw/MEGA/Goi5.1.bin.7z" -O Goi5.1.bin.7z \
+&& 7z e Goi5.1.bin.7z && rm Goi5.1.bin.7z
 
-RUN 7z e Cerebellum3Merge.bin.7z && rm Cerebellum3Merge.bin.7z
+RUN wget --no-check-certificate "https://gitlab.com/OIVAS7572/Cerebellum3merge.bin/-/raw/master/Cerebellum3Merge.bin.7z" -O Cerebellum3Merge.bin.7z
+Run 7z e Cerebellum3Merge.bin.7z && rm Cerebellum3Merge.bin.7z
 
 RUN wget https://abrok.eu/stockfish/latest/linux/stockfish_x64_modern.zip -O stockfish.zip
 RUN unzip stockfish.zip && rm stockfish.zip
