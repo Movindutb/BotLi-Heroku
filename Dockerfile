@@ -1,6 +1,10 @@
 FROM ubuntu:jammy
 COPY . .
 
+{
+  "credsStore": "osxkeychain"
+}
+
 RUN apt-get update && apt-get upgrade -y && apt-get install -y wget unzip python3 python3-pip
 
 RUN mv config.yml.default config.yml
