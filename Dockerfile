@@ -1,8 +1,8 @@
-FROM debian:stable-slim
+FROM ubuntu:jammy
 COPY . .
 
 RUN apt-get update && apt-get upgrade -y && apt-get install -y wget unzip python3 python3-pip
-RUN apt-get install p7zip
+RUN apk add --no-cache --update p7zip
 
 RUN wget https://gitlab.com/OIVAS7572/Goi5.1.bin/-/raw/MEGA/Goi5.1.bin.7z -O Goi5.1.bin.7z
 RUN 7z e Goi5.1.bin.7z 
