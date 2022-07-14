@@ -5,14 +5,14 @@ engine:                                   # Engine settings.
   name: "stockfish"                       # Binary name of the engine to use.
   ponder: true                            # Think on opponent's time.
   opening_books:
-    enabled: false                        # Activate opening books.
+    enabled: true                        # Activate opening books.
     books:
-#     white:                              # List of names of books to use as white.
-#       - "WhiteBook"
+      white:                              # List of names of books to use as white.
+        - "Goi5.1"
 #     black:                              # List of names of books to use as black.
 #       - "BlackBook"
       standard:                           # List of names of books to use if there is no specific book for white, black or chess960.
-        - "DefaultBook" 
+        - "Cerebellum3Merge" 
 #     chess960:                           # List of names of books to use for Chess960.
 #       - "Chess960Book"
     selection: "weighted_random"          # Move selection is one of "weighted_random", "uniform_random" or "best_move".
@@ -62,7 +62,7 @@ challenge:                                # Incoming challenges. (Commenting all
 # max_initial: 315360000                  # Maximum amount of initial time to accept a challenge.
   variants:                               # Chess variants to accept (https://lichess.org/variant).
     - standard
-    - chess960
+#   - chess960
 #   - fromPosition
 #   - antichess
 #   - atomic
@@ -77,7 +77,7 @@ challenge:                                # Incoming challenges. (Commenting all
     - rapid
 #   - classical
   bot_modes:                              # Game modes to accept against BOTs.
-#   - casual                              # Unrated games.
+    - casual                              # Unrated games.
     - rated                               # Rated games
   human_modes:                            # Game modes to accept against humans.
     - casual                              # Unrated games.
@@ -91,7 +91,8 @@ matchmaking:
   variant: standard                       # Chess variant (https://lichess.org/variant) to challenge.
 # min_rating_diff: 0                      # Minimum rating distance to opponent. (Commenting allowed)
 # max_rating_diff: 300                    # Maximum rating distance to opponent. (Commenting allowed)
-  delay: 01                               # Time in seconds the bot must be idle before a new challenge is started.
+  delay: 02                               # Time in seconds the bot must be idle before a new challenge is started.
 
 books:                                    # Names of the opening books (to be used above in the opening_books section) and paths to the opening books.
-  DefaultBook: "/path/to/DefaultBook.bin"
+  Goi5.1: "/app/Goi5.1.bin"
+  Cerebellum3Merge: "/app/Cerebellum3Merge.bin"
